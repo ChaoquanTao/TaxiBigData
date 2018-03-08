@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+   <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=5e9c684cc948bc7180d440b07b8e49da"></script> 
+    <script src="//webapi.amap.com/ui/1.0/main.js"></script>
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script type="text/javascript"> </script>
+    <script src="app.js"></script>
+    <!-- <script src="search_replay.js"></script> -->
+    <div style="position: absolute;left: 20px;top:0px">
+        <input id="cph" name="cph" type="text" placeholder="请输入车牌号"/> 
+        <!-- <button name="搜索" onclick="haha()" /> -->
+        <button  onclick="haha()">Search</button>
+        <button  onclick="disAll()">displayAll</button>
+    </div>
+   
+</body>
+</html>
