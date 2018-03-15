@@ -260,16 +260,18 @@ console.log(res)
                     pathNavigatorStyle:{
                         // width: 24,
                         // height: 24,
+                        autoRotate:true,
                         strokeStyle: null,
                         //fillStyle: 'red',
-                        content: 'defaultPathNavigator',
-                        // content: PathSimplifier.Render.Canvas.getImageContent('G:/毕设/work/gaode/taxi.png', onload, onerror),
+                        //content: 'defaultPathNavigator',
+                         content: PathSimplifier.Render.Canvas.getImageContent('./images/icon4.jpeg', onload, onerror),
                         pathLinePassedStyle: {
                             strokeStyle: null, //线颜色，比如 red, rgb(255,0,0), rgba(0,0,0,1)等
                             lineWidth:  0, //  线宽度
                             borderStyle: null,  //描边颜色
                             borderWidth: 0,  //描边宽度
-                            fillStyle: null
+                            fillStyle: null,
+                            
                         }
                     }
                 });
