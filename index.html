@@ -10,6 +10,12 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=5e9c684cc948bc7180d440b07b8e49da"></script> 
 <script src="//webapi.amap.com/ui/1.0/main.js"></script>
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
 <style type="text/css">
     body{
         margin: 0px;
@@ -180,7 +186,15 @@
 
     </div>
     <div id="content">
-
+        <script  src="slider.js"> </script>
+        <script type="text/javascript">
+            //console.log(data)
+        </script>
+        <p>
+            <label for="amount">播放速度：</label>
+            <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+        </p>
+        <div id ="slider"></div>
        <div id="container">
            <script src="app.js"></script>
            <script type="text/javascript">
@@ -191,6 +205,7 @@
 
             </script>
         </div>
+
 
 <!-- <script src="search_replay.js"></script> -->
       

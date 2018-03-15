@@ -1,7 +1,9 @@
-
+ 
 function disAll(){
 	// window.location.reload()
-	console.log("displayall")
+    //var data = document.getElementById('slider').getAttribute('data')
+	console.log(replay_speed)
+    console.log("displayall")
 	$.ajax({
 		url: "/datas",
 		type:'GET',
@@ -240,7 +242,7 @@ console.log(res)
 	                // console.log(start_info[t])
 	                //console.log('index: '+ start_info[t].index)
 	                //console.log(parseInt(start_info[t+1].start_time)-parseInt(start_info[t].start_time))
-	                console.log('异车时差： '+ (start_info[t+1].start_time - start_info[t].start_time))
+	                console.log('异车时差： '+ (start_info[t+1].start_time - start_info[t].start_time)+'replay_speed'+replay_speed)
 	                replay(start_info[t].index)
 	                t++
 	                console.log("new t:"+ t)
@@ -249,14 +251,14 @@ console.log(res)
 	                	console.log("clearInterval one")
 	                }
 
-	            },start_info[t+1].start_time - start_info[t].start_time)
+	            },(start_info[t+1].start_time - start_info[t].start_time)/replay_speed)
             }
             function replay(idx){
             	console.log('idx: '+idx)
                 var navg0 = pathSimplifierIns.createPathNavigator(idx, //关联第1条轨迹
                 {
                     loop: true, //循环播放
-                    speed: speeds[idx][0],
+                    speed: speeds[idx][0]*replay_speed,
                     pathNavigatorStyle:{
                         // width: 24,
                         // height: 24,
@@ -284,7 +286,7 @@ console.log(res)
                  var int2 = setInterval(function(){
                  	console.log("cnt==========="+cnt)
                  	console.log('t1: '+t1)
-                 	console.log('cph '+ cph[idx] + '同车时差： '+ time_differ[idx][t1])
+                 	console.log('cph '+ cph[idx] + '同车时差： '+ time_differ[idx][t1]+'replay_speed:'+replay_speed)
            
                  	t1++
                         //var cursor = navg0.getCursor().idx
@@ -296,14 +298,14 @@ console.log(res)
                         //     navg0.setSpeed(speeds[i-1][cursor])
                         // }
                         // else{
-                        	navg0.setSpeed(speeds[idx][t1])
+                        	navg0.setSpeed(speeds[idx][t1]*replay_speed)
                        // }
                        console.log(navg0.getSpeed())
                        if(t1==time_differ[idx].length){
                        		console.log("layer2 over");
                        		clearInterval(int2);
                        }
-                   },time_differ[idx][t1]) 
+                   },time_differ[idx][t1]/replay_speed) 
              }
          }
      }
